@@ -64,3 +64,6 @@ with open(fileinput) as file:
 
 print("Distance", max(data_operations), min(data_operations), statistics.mean(data_operations), sep="\t")
 print("Approximation", max(data_approx), min(data_approx), statistics.mean(data_approx), sep="\t")
+print(max(data_operations), min(data_operations), statistics.mean(data_operations), max(data_approx), min(data_approx), statistics.mean(data_approx), sep = "\t")
+
+
