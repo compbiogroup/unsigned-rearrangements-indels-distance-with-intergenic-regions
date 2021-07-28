@@ -8,6 +8,6 @@ for n in range(10, 501, 50):
 	for op in operations:
 		for model in ["r","t","rt"]:
 			file = "input/%s_%s_%s.in" % (model, n, op)
-			command = "python generate_instance.py %s %s %s %s > %s" % (qtd, n, int(n*op), model, file)
+			command = "python3 generate_instance.py %s %s %s %s > %s" % (qtd, n, int(n*op), model, file)
 			print(command)
 			os.system(command)
