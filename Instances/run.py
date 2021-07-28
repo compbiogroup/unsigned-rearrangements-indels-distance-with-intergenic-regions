@@ -10,4 +10,4 @@ for n in range(10, 501, 50):
 			file = "input/%s_%s_%s.in" % (model, n, op)
 			command = "python generate_instance %s %s %s %s > %s" % (qtd, n, int(n*op), model, file)
 			print(command)
-			# os.system(command)
+			os.system(command)
