@@ -8,6 +8,7 @@ for n in range(50, 501, 50):
 	for op in operations:
 		for model in ["r","t","rt"]:
 			file = "Instances/input/%s_%s_%s.in" % (model, n, op)
-			command = "python3 main.py %s %s" % (file, model)
+			output = "output/%s_%s_%s.out" % (model, n, op)
+			command = "python3 main.py %s %s > %s" % (file, model, output)
 			print(command)
 			os.system(command)
