@@ -6,7 +6,7 @@ qtd = 1000
 
 def write(file, line):
 	with open(file, "a") as file_object:
-	    file_object.write(line + "\n")
+	    file_object.write(line)
 
 for n in range(50, 501, 50):
 	for op in operations:
