@@ -1,7 +1,7 @@
 import sys
 import os
 
-operations = [0.1, 0.3, 0.5, 1]
+operations = [0.1, 0.5, 1]
 model = sys.argv[1]
 results = []
 
