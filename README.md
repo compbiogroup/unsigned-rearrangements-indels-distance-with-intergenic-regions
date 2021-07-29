@@ -1,4 +1,4 @@
-"Incorporating Intergenic Regions into Reversal and Transposition Distances with Indels"
+## Incorporating Intergenic Regions into Reversal and Transposition Distances with Indels ##
 
 This repository has code for the algorithms of the paper "Incorporating Intergenic Regions into Reversal and Transposition Distances with Indels".
 
