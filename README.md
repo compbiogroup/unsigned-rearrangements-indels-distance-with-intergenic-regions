@@ -1,4 +1,4 @@
-"Incorporating Intergenic Regions into Reversal and Transposition Distances with Indels"
+### Supplemental Material: Incorporating Intergenic Regions into Reversal and Transposition Distances with Indels
 
 The file *Supplemental Material.pdf* presents examples of the main concepts used in the algorithms proposed in the paper and experimental results using simulated data.
 
