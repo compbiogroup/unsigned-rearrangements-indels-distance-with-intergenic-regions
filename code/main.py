@@ -7,6 +7,7 @@ import utils as utils
 import operations as op
 import alg_reversal_indel as alg_ri
 import alg_transposition_indel as alg_ti
+import alg_reversal_transposition_indel as alg_rti
 
 from genome import Genome
 
@@ -16,7 +17,7 @@ fileinput = sys.argv[1]
 problem = sys.argv[2]
 
 
-print("Lower Bound", "Approximation", "Operations", sep = "\t")
+print("Lower Bound", "Approximation", "Operations", "Indels", "Reversals", "Transpositions", sep = "\t")
 
 data_lb = []
 data_approx = []
@@ -47,12 +48,12 @@ with open(fileinput) as file:
 
 			alg_ti.sortByRearrangements(genome)
 			alg_distance = genome.operationsApplied
-		else:
+		elif problem == "rt":
 			genome.updateRBreakpoints()
 			score = genome.score()
 			lower_bound = math.ceil(score/3)
 
-			alg_ri.sortByRearrangements(genome)
+			alg_rti.sortByRearrangements(genome)
 			alg_distance = genome.operationsApplied
 
 		approximation = alg_distance / lower_bound
@@ -60,7 +61,11 @@ with open(fileinput) as file:
 		data_lb.append(lower_bound)
 		data_approx.append(approximation)
 		data_operations.append(alg_distance)
-		print(lower_bound, approximation, alg_distance, sep="\t")
+		nof_indels = genome.descOperationsApplied.count("d") + genome.descOperationsApplied.count("i")
+		nof_reversals = genome.descOperationsApplied.count("r")
+		nof_transpositions = genome.descOperationsApplied.count("t")
+		
+		print(lower_bound, approximation, alg_distance, nof_indels, nof_reversals, nof_transpositions, sep="\t")
 
 print("Distance", max(data_operations), min(data_operations), statistics.mean(data_operations), sep="\t")
 print("Approximation", max(data_approx), min(data_approx), statistics.mean(data_approx), sep="\t")
