@@ -15,6 +15,7 @@ class Genome:
         self.updateAlphabets()
         self.updateInverse()
         self.operationsApplied = 0
+        self.descOperationsApplied = []
 
     def sizeNonExtended(self):
         return len(self.pi) - 2
